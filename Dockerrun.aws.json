@@ -1,0 +1,11 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "public.ecr.aws/p2q0f2u7/test-repo-public:latest"
+  },
+  "Ports": [
+    {
+      "ContainerPort": 8000
+    }
+  ]
+}
