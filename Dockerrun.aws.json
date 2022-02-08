@@ -1,11 +1,12 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "public.ecr.aws/p2q0f2u7/test-repo-public:latest"
+    "Name": "651824940677.dkr.ecr.us-east-2.amazonaws.com/test-repo:latest"
   },
   "Ports": [
     {
-      "ContainerPort": 8000
+      "ContainerPort": 8000,
+      "HostPort": 8000
     }
   ]
 }

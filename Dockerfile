@@ -7,8 +7,11 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update
 RUN apt-get install --no-install-recommends -y curl build-essential
 
+RUN pip3 install --upgrade pip
 COPY ./app ./
 
 RUN pip3 install -r ./requirements.txt
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+RUN chmod +x ./web_entrypoint.sh
+
+ENTRYPOINT ["/usr/src/app/web_entrypoint.sh"]

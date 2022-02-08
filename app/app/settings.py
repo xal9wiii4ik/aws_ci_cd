@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,14 @@ SECRET_KEY = 'django-insecure-8egp*^k(a^el(ub)so4r6+6(kyknhjo^u(t9xuo@!$)ct==jux
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+print(f'RDS_HOSTNAME: {os.environ.get("RDS_HOSTNAME")}')
+print(f'RDS_PORT: {os.environ.get("RDS_PORT")}')
+print(f'RDS_DB_NAME: {os.environ.get("RDS_DB_NAME")}')
+print(f'RDS_USERNAME: {os.environ.get("RDS_USERNAME")}')
+print(f'RDS_PASSWORD: {os.environ.get("RDS_PASSWORD")}')
+print(f'check_1: {os.environ.get("check_1")}')
+print(f'check_2: {os.environ.get("check_2")}')
+print(f'check_3: {os.environ.get("check_3")}')
 
 # Application definition
 
@@ -72,11 +80,19 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+print(f'RDS_HOSTNAME: {os.environ.get("RDS_HOSTNAME")}')
+print(f'RDS_PORT: {os.environ.get("RDS_PORT")}')
+print(f'RDS_DB_NAME: {os.environ.get("RDS_DB_NAME")}')
+print(f'RDS_USERNAME: {os.environ.get("RDS_USERNAME")}')
+print(f'RDS_PASSWORD: {os.environ.get("RDS_PASSWORD")}')
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": 'django.db.backends.postgresql',
+        "NAME": os.environ.get("RDS_DB_NAME"),
+        "USER": os.environ.get("RDS_USERNAME"),
+        "PASSWORD": os.environ.get("RDS_PASSWORD"),
+        "HOST": os.environ.get("RDS_HOSTNAME"),
+        "PORT": os.environ.get("RDS_PORT"),
     }
 }
 
