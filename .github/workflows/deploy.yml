@@ -6,8 +6,8 @@ on:
 name: Deploy to ECR
 
 jobs:
-  deploy:
-    name: Deploy
+  build_push:
+    name: build_push
     runs-on: ubuntu-latest
 
     steps:
