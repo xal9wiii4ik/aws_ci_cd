@@ -1,7 +1,7 @@
 on:
   pull_request:
-    branches: [ dev ]
-    types: [closed]
+    branches: [ master ]
+    types: [ closed ]
 
 name: Deploy to ECR
 
