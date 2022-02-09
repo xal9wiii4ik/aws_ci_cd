@@ -1,8 +1,7 @@
 on:
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
+    branches: [ dev ]
+    types: [closed]
 
 name: Deploy to ECR
 
